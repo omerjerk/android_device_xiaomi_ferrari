@@ -70,6 +70,11 @@ on post-fs-data
     chown system system /dev/sysmatdrv
     chmod 0660 /dev/sysmatdrv
 
+    #proper permissions for tap to wake sysfs
+    chown root system /sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/wakeup_mode
+    chmod 0664 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/wakeup_mode
+    restorecon /sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/wakeup_mode
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
