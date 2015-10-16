@@ -16,6 +16,8 @@
 
 package org.cyanogenmod.hardware;
 
+import java.io.File;
+
 import org.cyanogenmod.hardware.util.FileUtils;
 
 public class TapToWake {
